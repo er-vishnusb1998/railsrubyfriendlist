@@ -1,0 +1,13 @@
+<div class="card border-success mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h2><%= @friend.name %></h2></div>
+  <div class="card-body text-success">
+    <h5 class="card-title"><%= @friend.insta_id %></h5>
+    <p class="card-text">
+       <%= @friend.email %> | <%= @friend.phone %> | <%= @friend.place %>
+    </p>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-secondary" %> 
+<%= link_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+<%= link_to 'Back', friends_path , class:"btn btn-dark" %>

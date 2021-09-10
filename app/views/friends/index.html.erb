@@ -1,0 +1,34 @@
+
+
+<h1>Friends</h1>
+
+<table class="table table-striped table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Insta</th>
+      <th>Place</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+          <tr>
+            <td><%= link_to friend.name, friend %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.phone %></td>
+            <td><%= friend.insta_id %></td>
+            <td><%= friend.place %></td>
+          </tr>
+          <% else %>
+           <td></td> <td></td> <td></td> <td></td> <td></td> 
+          <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary", style:"color:#fff" %>
